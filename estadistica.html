@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Papa', 3],
+          ['Sandia', 1],
+          ['Tomate', 1],
+          ['Durazno', 1],
+          ['Manzana', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Productos que mas produce Comparapa',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+        <nav class="white" role="navigation">
+                <div class="nav-wrapper container">
+                  <a id="logo-container" href="#" class="brand-logo">Estadisticas</a>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="video.html">Video</a></li>
+                      <li><a href="estadistica.html">Estadisticas</a></li>
+                      <li><a href="./">Inicio</a></li>
+                  </ul>
+            
+                  <ul id="nav-mobile" class="sidenav">
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="estadistica.html">Estadisticas</a></li>
+                    <li><a href="./">Inicio</a></li>
+                  </ul>
+                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+              </nav>
+      <div class="container">
+            <h1>Estadisticas Agricola</h1> <h2> Comarapa</h2>
+            <div id="chart_div"></div>
+      </div>
+      
+      <footer class="page-footer teal">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Contactame</h5>
+                  <p class="grey-text text-lighten-4">
+                    <strong>Cel: </strong> 68816011 <br>                                                
+                    <strong>E-mail: </strong> jorgeluiscolqueguzman@gmail.com</p>
+        
+        
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Jorge Luis</a>
+              </div>
+            </div>
+          </footer>
+        
+  </body>
+</html>
